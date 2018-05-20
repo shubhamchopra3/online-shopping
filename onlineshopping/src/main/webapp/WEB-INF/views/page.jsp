@@ -3,6 +3,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="images" value="/resources/images" />
+<spring:url var="js" value="/resources/js" />
+<spring:url var="css" value="/resources/css" />
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
@@ -31,12 +33,13 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<!-- Self coded css -->
+   <link rel="stylesheet" type="text/css" href="${css}/myapp.css">
+   
+   <!-- Bootstrap theme css from bootswatch.com -->
+   <link rel="stylesheet" type="text/css" href="${css}/bootstrap-theme.css">
+
 <style>
-footer {
-	background-color: black;
-	color: white;
-	text-align: center;
-}
 </style>
 
 
@@ -44,28 +47,37 @@ footer {
 </head>
 <body>
 
-	<!-- Navigation -->
-	<%@include file="./shared/navbar.jsp"%>
+	<div class="wrapper">
+		<!-- Navigation -->
+		<%@include file="./shared/navbar.jsp"%>
 
-	<!-- Page Content -->
-	<!-- Load this section only when user clicks home -->
-	<c:if test="${UserClickHome == true}">
-		<%@include file="home.jsp"%>
-	</c:if>
-	
-	<!-- Load this section only when user clicks About -->
-	<c:if test="${UserClickAbout == true}">
-		<%@include file="about.jsp"%>
-	</c:if>
-	
-	<!-- Load this section only when user clicks home -->
-	<c:if test="${UserClickContact == true}">
-		<%@include file="contact.jsp"%>
-	</c:if>
+		<!-- Page Content -->
 
-	<!-- Footer -->
+		<div class="content">
+			<!-- Load this section only when user clicks home -->
+			<c:if test="${UserClickHome == true}">
+				<%@include file="home.jsp"%>
+			</c:if>
 
-	<%@include file="./shared/footer.jsp"%>
+			<!-- Load this section only when user clicks About -->
+			<c:if test="${UserClickAbout == true}">
+				<%@include file="about.jsp"%>
+			</c:if>
 
+			<!-- Load this section only when user clicks home -->
+			<c:if test="${UserClickContact == true}">
+				<%@include file="contact.jsp"%>
+			</c:if>
+
+		</div>
+
+		<!-- Footer -->
+
+		<%@include file="./shared/footer.jsp"%>
+
+
+		<!-- Self coded javascript -->
+		<script src="${js}/myapp.js"></script>
+	</div>
 </body>
 </html>
