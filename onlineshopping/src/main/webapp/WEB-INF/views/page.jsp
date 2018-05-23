@@ -39,9 +39,6 @@
    <!-- Bootstrap theme css from bootswatch.com -->
    <link rel="stylesheet" type="text/css" href="${css}/bootstrap-theme.css">
 
-<style>
-</style>
-
 
 
 </head>
