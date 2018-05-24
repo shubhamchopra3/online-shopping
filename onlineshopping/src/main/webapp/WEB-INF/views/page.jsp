@@ -38,6 +38,8 @@
    
    <!-- Bootstrap theme css from bootswatch.com -->
    <link rel="stylesheet" type="text/css" href="${css}/bootstrap-theme.css">
+   
+   
 
 
 
@@ -64,6 +66,11 @@
 			<!-- Load this section only when user clicks home -->
 			<c:if test="${UserClickContact == true}">
 				<%@include file="contact.jsp"%>
+			</c:if>
+			
+			<!-- Load this section only when user clicks list Products -->
+			<c:if test="${UserClickCategoryProducts == true or UserClickAllProducts==true}">
+				<%@include file="listProducts.jsp"%>
 			</c:if>
 
 		</div>
