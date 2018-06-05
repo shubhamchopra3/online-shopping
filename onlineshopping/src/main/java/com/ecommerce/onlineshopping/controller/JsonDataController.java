@@ -18,14 +18,14 @@ public class JsonDataController {
 	@Autowired
 	private ProductDAO productDAO;
 	
-	@RequestMapping("/all/products")
+	@RequestMapping("/all/products") //url becomes http://localhost:8080/onlineshopping/json/data/all/products
 	@ResponseBody  //this annotation is responsible for conversion of object to json
 	public List<Product> getAllProducts(){
 		
 		return productDAO.listActiveProducts();
 	}
 
-	@RequestMapping(value="/category/{id}/products")
+	@RequestMapping(value="/category/{id}/products")  //url becomes http://localhost:8080/onlineshopping/json/data/category/1/products
 	@ResponseBody  //this annotation is responsible for conversion of object to json
 	public List<Product> getProductsByCategory(@PathVariable("id") int id){
 		

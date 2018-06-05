@@ -20,6 +20,15 @@
 
 <title>Online Shopping -${title}</title>
 
+<script>
+
+window.menu = '${title}';
+window.contextRoot  = '${contextRoot}';  //this is window global object available in javascript
+
+</script>
+
+
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -40,8 +49,10 @@
    <link rel="stylesheet" type="text/css" href="${css}/bootstrap-theme.css">
    
    
-
-
+<!-- DataTable -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.16/r-2.2.1/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
 
 </head>
 <body>
@@ -82,6 +93,9 @@
 
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
+		
+		
+		
 	</div>
 </body>
 </html>
