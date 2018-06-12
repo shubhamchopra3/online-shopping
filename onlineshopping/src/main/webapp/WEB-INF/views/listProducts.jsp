@@ -69,6 +69,7 @@
 								<th>brand</th>
 								<th>Price</th>
 								<th>Qty. Available</th>
+								<th></th>  <!-- empty because view and add to cart column does not require any column name -->
 								
 
 								</tr>

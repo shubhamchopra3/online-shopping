@@ -96,15 +96,31 @@
 			  dataSrc : ''
 		 },
 		 columns : [
+			  
+			 
 			 
 			 		{data:'name'
 			 		},
 			 		{data:'brand'
 			 		},
-			 		{data:'unitPrice'
+			 		{data:'unitPrice',
+			 			mRender: function(data,type,row){  //mRender function is of jquery datatable
+			 				return '&#8377; '+ data    //&#8377; is html entity code for ruppes symbol
+			 			}
 			 		},
 			 		{data:'quantity'
 			 		},
+			 		{
+			 			data:'id',
+			 			bSortable:false, //as we do not want to sort this view product and add to cart product column
+			 			mRender: function(data,type,row){
+			 				var str='';
+			 					str+='<a href="'+window.contextRoot+'/show/'+data+'/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> &#160; '  //url to view the product data contains the product id, &#160; is html code for space , for giving space between tow url
+			 					str+='<a href="'+window.contextRoot+'/cart/add/'+data+'/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>'  //url to add the product to the cart
+			 				return str;
+			 				
+			 			}	
+			 		}
 		 ]
 	  }
 	  
